@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a car</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+  <h1>Create a car :</h1>
+
+  <form th:action="@{/addCar}"
+        th:object="${carForm}" method="POST">
+    Brand :
+    <input type="text" th:field="*{brand}" />
+    <br/>
+    <br/>
+    Model :
+    <input type="text" th:field="*{type}" />
+    <br/>
+    <br/>
+    Color :
+    <input type="text" th:field="*{color}" />
+    <br/>
+    <br/>
+    <input type="submit" value="Create" />
+  </form>
+  <br/>
+
+  <!-- Check if errorMessage is not null and not empty -->
+
+  <div th:if="${errorMessage}" th:utext="${errorMessage}"
+       style="color:red;font-style:italic;">
+    ...
+  </div>
+
+</body>
+</html>
