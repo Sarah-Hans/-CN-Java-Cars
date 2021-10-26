@@ -59,11 +59,10 @@ public class MainController {
     @RequestMapping(value = { "/oneCar" }, method = RequestMethod.GET)
     public String oneCar(@RequestParam("id") int id, Model model) {
 
-        Car car = cars.get(0);
-        model.addAttribute("car", car);
         for (int i = 0; i < cars.size(); i++) {
-            car = cars.get(i);
+            Car car = cars.get(i);
             if (car.getId() == id) {
+                model.addAttribute("car", car);
                 return "oneCar";
             }
         }
