@@ -5,9 +5,7 @@ import com.cars.carsapp.model.Car;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +54,23 @@ public class MainController {
         return "modelsList";
     }
 
+
+    // Cette méthode affiche une voiture en cliquant sur son id
+    @RequestMapping(value = { "/oneCar" }, method = RequestMethod.GET)
+    public String oneCar(@RequestParam("id") int id, Model model) {
+
+        Car car = cars.get(0);
+        model.addAttribute("car", car);
+        for (int i = 0; i < cars.size(); i++) {
+            car = cars.get(i);
+            if (car.getId() == id) {
+                return "oneCar";
+            }
+        }
+        model.addAttribute("errorMessage", errorMessage);
+        return "carsList";
+    }
+
     // Cette méthode permet d'afficher le formulaire de création d'une voiture
     @RequestMapping(value = { "/addCar" }, method = RequestMethod.GET)
     public String showAddCarPage(Model model) {
@@ -76,7 +91,8 @@ public class MainController {
         String type = carForm.getType();
         String color = carForm.getColor();
 
-        if (brand != null && brand.length() > 0 //
+        if (id > 0 //
+                && brand != null && brand.length() > 0 //
                 && type != null && type.length() > 0 //
                 && color != null && color.length() > 0) {
             Car newCar = new Car(id, brand, type, color);

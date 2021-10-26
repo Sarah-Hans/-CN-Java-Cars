@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <title th:utext="${car.brand}"></title>
+</head>
+<body>
+    <h1 th:utext="${'Voiture n°'+car.id}"></h1>
+    <p th:utext="${'Brand : '+car.brand}"></p>
+    <p th:utext="${'Model : '+car.type}"></p>
+    <p th:utext="${'Color : '+car.color}"></p>
+</body>
+</html>

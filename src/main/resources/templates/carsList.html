@@ -18,7 +18,7 @@
         <th>Color</th>
       </tr>
       <tr th:each ="car : ${cars}">
-        <td th:utext="${car.id}">...</td>
+        <td><a th:href="@{/oneCar(id=${car.id})}"><p th:utext="${car.id}">...</p></a></td>
         <td th:utext="${car.brand}">...</td>
         <td th:utext="${car.type}">...</td>
         <td th:utext="${car.color}">...</td>
