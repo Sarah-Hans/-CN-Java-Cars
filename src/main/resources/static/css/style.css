@@ -1,19 +1,42 @@
+#content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.block {
+    width: 800px;
+}
+
+p {
+    font-family: Quicksand;
+}
+
 h1 {
+    text-align: center;
     color:#0000FF;
     font-family: Comfortaa;
 }
 
 h2 {
+    text-align: center;
     color:#FF0000;
     font-family: Comfortaa;
 }
 
+a {
+    font-family: Quicksand;
+    text-align: center;
+}
+
 table {
     border-collapse: collapse;
+    text-align: center;
+    width: 500px;
+    font-family: Quicksand;
 }
 
 table th, table td {
-    padding: 5px;
+    padding: 10px;
 }
 
 #goback {

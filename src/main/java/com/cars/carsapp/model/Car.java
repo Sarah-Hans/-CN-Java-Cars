@@ -6,15 +6,17 @@ public class Car {
     private String brand;
     private String type;
     private String color;
+    private String picture;
 
     public Car(){
     }
 
-    public Car(int id, String brand, String type, String color) {
+    public Car(int id, String brand, String type, String color, String picture) {
         this.id = id;
         this.brand = brand;
         this.type = type;
         this.color = color;
+        this.picture = picture;
     }
 
     public int getId() {
@@ -47,5 +49,13 @@ public class Car {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }

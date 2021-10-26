@@ -16,8 +16,8 @@ public class MainController {
     private static List<Car> cars = new ArrayList<Car>();
 
     static {
-        cars.add(new Car(1, "Ford", "Fiesta", "Blue"));
-        cars.add(new Car(2, "Ford", "Kuga", "White"));
+        cars.add(new Car(1, "Ford", "Fiesta", "Blue", "https://wallsdesk.com/wp-content/uploads/2017/01/Ford-Fiesta-ST-Photos.jpg"));
+        cars.add(new Car(2, "Ford", "Kuga", "White", "https://smgmedia.blob.core.windows.net/images/113803/1024/ford-kuga-hatchback-43477a838984.jpg"));
     }
 
     // Injectez (inject) via application.properties.
@@ -85,16 +85,16 @@ public class MainController {
     public String saveCar(Model model, //
                              @ModelAttribute("carForm") CarForm carForm) {
 
-        int id = carForm.getId();
+        Integer id = carForm.getId();
         String brand = carForm.getBrand();
         String type = carForm.getType();
         String color = carForm.getColor();
+        String picture = carForm.getPicture();
 
-        if (id > 0 //
-                && brand != null && brand.length() > 0 //
+        if (brand != null && brand.length() > 0 //
                 && type != null && type.length() > 0 //
                 && color != null && color.length() > 0) {
-            Car newCar = new Car(id, brand, type, color);
+            Car newCar = new Car(id, brand, type, color, picture);
             cars.add(newCar);
 
             return "redirect:/carsList";

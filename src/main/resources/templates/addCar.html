@@ -11,7 +11,8 @@
   <form th:action="@{/addCar}"
         th:object="${carForm}" method="POST">
     ID :
-    <input type="int" th:field="*{id}" />
+    <input type="text" th:field="*{id}" />
+    <br/>
     <br/>
     Brand :
     <input type="text" th:field="*{brand}" />
@@ -23,6 +24,10 @@
     <br/>
     Color :
     <input type="text" th:field="*{color}" />
+    <br/>
+    <br/>
+    Picture :
+    <input type="text" th:field="*{picture}" />
     <br/>
     <br/>
     <input type="submit" value="Create" />

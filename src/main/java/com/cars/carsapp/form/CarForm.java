@@ -6,6 +6,7 @@ public class CarForm {
     private String brand;
     private String type;
     private String color;
+    private String picture;
 
     public int getId() {
         return id;
@@ -37,5 +38,13 @@ public class CarForm {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }

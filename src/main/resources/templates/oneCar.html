@@ -6,9 +6,20 @@
     <title th:utext="${car.brand}"></title>
 </head>
 <body>
-    <h1 th:utext="${'Voiture n°'+car.id}"></h1>
-    <p th:utext="${'Brand : '+car.brand}"></p>
-    <p th:utext="${'Model : '+car.type}"></p>
-    <p th:utext="${'Color : '+car.color}"></p>
+    <div id="content">
+        <div class="block">
+            <h1 th:utext="${'Voiture n°'+car.id}"></h1>
+        </div>
+        <div class="block">
+            <p th:utext="${'Brand : '+car.brand}"></p>
+            <p th:utext="${'Model : '+car.type}"></p>
+            <p th:utext="${'Color : '+car.color}"></p>
+            <p>Picture : </p>
+            <img th:src="${car.picture}" width="400">
+        </div>
+        <div id="goback">
+            <a th:href="@{/carsList}">Go Back To Cars List</a>
+        </div>
+    </div>
 </body>
 </html>
