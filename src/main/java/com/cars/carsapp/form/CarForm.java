@@ -2,9 +2,18 @@ package com.cars.carsapp.form;
 
 public class CarForm {
 
+    private int id;
     private String brand;
     private String type;
     private String color;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getBrand() {
         return brand;

@@ -18,8 +18,8 @@ public class MainController {
     private static List<Car> cars = new ArrayList<Car>();
 
     static {
-        cars.add(new Car("Ford", "Fiesta", "Blue"));
-        cars.add(new Car("Ford", "Kuga", "White"));
+        cars.add(new Car(1, "Ford", "Fiesta", "Blue"));
+        cars.add(new Car(2, "Ford", "Kuga", "White"));
     }
 
     // Injectez (inject) via application.properties.
@@ -51,12 +51,7 @@ public class MainController {
     @RequestMapping(value = { "/modelsList" }, method = RequestMethod.GET)
     public String modelsList(Model model) {
 
-        for (Car car : cars) {
-            String type = car.getType();
-            System.out.println(type);
-        }
-
-        model.addAttribute("cars", cars);
+            model.addAttribute("cars", cars);
 
         return "modelsList";
     }
@@ -71,11 +66,12 @@ public class MainController {
         return "addCar";
     }
 
-    // Cette méthode permey de créer une voiture
+    // Cette méthode permet de créer une voiture
     @RequestMapping(value = { "/addCar" }, method = RequestMethod.POST)
     public String saveCar(Model model, //
                              @ModelAttribute("carForm") CarForm carForm) {
 
+        int id = carForm.getId();
         String brand = carForm.getBrand();
         String type = carForm.getType();
         String color = carForm.getColor();
@@ -83,7 +79,7 @@ public class MainController {
         if (brand != null && brand.length() > 0 //
                 && type != null && type.length() > 0 //
                 && color != null && color.length() > 0) {
-            Car newCar = new Car(brand, type, color);
+            Car newCar = new Car(id, brand, type, color);
             cars.add(newCar);
 
             return "redirect:/carsList";

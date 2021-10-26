@@ -10,7 +10,8 @@ public class Car {
     public Car(){
     }
 
-    public Car(String brand, String type, String color) {
+    public Car(int id, String brand, String type, String color) {
+        this.id = id;
         this.brand = brand;
         this.type = type;
         this.color = color;
