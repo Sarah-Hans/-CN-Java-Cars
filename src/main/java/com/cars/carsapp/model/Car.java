@@ -58,4 +58,15 @@ public class Car {
     public void setPicture(String picture) {
         this.picture = picture;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
+                ", type='" + type + '\'' +
+                ", color='" + color + '\'' +
+                ", picture='" + picture + '\'' +
+                '}';
+    }
 }
