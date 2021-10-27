@@ -6,14 +6,21 @@
     <title>Liste des modèles de voitures</title>
 </head>
 <body>
-  <h1>Liste des modèles de voitures</h1>
+<div id="content">
+    <div class="block">
+        <h1>Liste des modèles de voitures</h1>
+    </div>
+    <div class="block">
+        <table border="1">
+            <tr th:each ="car : ${cars}">
+                <td th:utext="${car.type}">...</td>
+            </tr>
+        </table>
+    </div>
+    <div id="goback">
+        <a th:href="@{/}">Go Back Home</a>
+    </div>
+</div>
 
-  <div>
-      <table border="1">
-          <tr th:each ="car : ${cars}">
-              <td th:utext="${car.type}">...</td>
-          </tr>
-      </table>
-  </div>
 </body>
 </html>
