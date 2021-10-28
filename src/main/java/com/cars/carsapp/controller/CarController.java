@@ -62,8 +62,8 @@ public class CarController {
 
     //Update car
     @ApiOperation(value = "Met à jour une voiture")
-    @PostMapping(value = {"/api/cars/update"})
-    public Car updateCar(@RequestBody Car car) {
+    @PutMapping(value = {"/api/cars/update/{id}"})
+    public Car updateCar(@RequestBody Car car, @PathVariable int id) {
         return carDao.update(car);
     }
 
