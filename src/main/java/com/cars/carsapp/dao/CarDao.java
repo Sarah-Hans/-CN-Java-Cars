@@ -10,5 +10,6 @@ public interface CarDao {
     public Car findById(int id);
     public Car save(Car car);
     public void delete(Car car);
+    public Car update(Car car);
 
 }

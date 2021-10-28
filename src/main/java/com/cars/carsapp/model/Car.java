@@ -1,5 +1,8 @@
 package com.cars.carsapp.model;
 
+import io.swagger.annotations.ApiModel;
+
+@ApiModel(value="DifferentModel", description="Sample model for the documentation")
 public class Car {
 
     private int id;

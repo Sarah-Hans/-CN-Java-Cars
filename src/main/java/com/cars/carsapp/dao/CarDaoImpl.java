@@ -50,4 +50,16 @@ public class CarDaoImpl implements CarDao {
             }
         }
     }
+
+    // Modifier une voiture
+    @Override
+    public Car update(Car car) {
+        for (int i = 0; i < cars.size(); i++) {
+            if (cars.get(i).getId() == car.getId()) {
+                cars.set(i, car);
+                return car;
+            }
+        }
+        return null;
+    }
 }
