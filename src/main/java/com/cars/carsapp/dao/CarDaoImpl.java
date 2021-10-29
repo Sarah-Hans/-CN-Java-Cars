@@ -9,9 +9,9 @@ import java.util.List;
 @Repository
 public class CarDaoImpl implements CarDao {
 
-    public static List<Car> cars = new ArrayList<>();
+    public List<Car> cars = new ArrayList<>();
 
-    static {
+    public CarDaoImpl() {
         cars.add(new Car(1, new String("Ford"), new String("Fiesta ST"), new String("Blue"), new String("https://wallsdesk.com/wp-content/uploads/2017/01/Ford-Fiesta-ST-Photos.jpg")));
         cars.add(new Car(2, new String("Ford"), new String("Kuga"), new String("White"), new String("https://smgmedia.blob.core.windows.net/images/113803/1024/ford-kuga-hatchback-43477a838984.jpg")));
         cars.add(new Car(3, new String("land Rover"), new String("Discovery Sport"), new String("Black"), new String("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F2.bp.blogspot.com%2F-T3FRcwS1fVc%2FV2FiaqvZXVI%2FAAAAAAAAFBk%2FERs6v0jDyXYm7ULrFl95b3odSuUViv-SACLcB%2Fs1600%2FLand%252BRover%252BDiscovery%252BSport%252B2.0%252BTD4%252BSE%252BBlack%252BLabel-1.jpg&f=1&nofb=1")));
