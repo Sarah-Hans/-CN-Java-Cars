@@ -1,15 +1,14 @@
 package com.cars.carsapp.dao;
 
 import com.cars.carsapp.model.Car;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface CarDao {
+@Repository
+public interface CarDao extends JpaRepository<Car, Integer> {
 
-    public List<Car> findAll();
-    public Car findById(int id);
-    public Car save(Car car);
-    public void delete(Car car);
-    public Car update(Car car);
+    Car findById(int id);
 
 }

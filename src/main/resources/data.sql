@@ -1,0 +1,3 @@
+INSERT INTO car (brand, type, color, picture) VALUES('Ford', 'Fiesta', 'Blue', 'https://wallsdesk.com/wp-content/uploads/2017/01/Ford-Fiesta-ST-Photos.jpg');
+INSERT INTO car (brand, type, color, picture) VALUES('Ford', 'Kuga', 'White', 'https://smgmedia.blob.core.windows.net/images/113803/1024/ford-kuga-hatchback-43477a838984.jpg');
+INSERT INTO car (brand, type, color, picture) VALUES('Land Rover', 'Discovery Sport', 'Black', 'https://2.bp.blogspot.com/-T3FRcwS1fVc/V2FiaqvZXVI/AAAAAAAAFBk/ERs6v0jDyXYm7ULrFl95b3odSuUViv-SACLcB/s1600/Land%2BRover%2BDiscovery%2BSport%2B2.0%2BTD4%2BSE%2BBlack%2BLabel-1.jpg');

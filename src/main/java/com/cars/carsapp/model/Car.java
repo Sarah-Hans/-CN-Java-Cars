@@ -2,10 +2,19 @@ package com.cars.carsapp.model;
 
 import io.swagger.annotations.ApiModel;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 @ApiModel(value="DifferentModel", description="Sample model for the documentation")
+@Entity // classe scannée et prise en compte
 public class Car {
 
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY) // identifié en tant que clé unique auto-générée
     private int id;
+
     private String brand;
     private String type;
     private String color;
